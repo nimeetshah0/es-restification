@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css" id="theme">
     <!-- Code syntax highlighting -->
+    <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="icon" sizes="32x32" href="img/favicon-roambee.ico">
@@ -26,7 +27,111 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="slides/main.md" data-separator="^\n\n\n"></section>
+        <!-- Slide 1 - Title card -->
+        <section data-background-color="#6300C8">
+          <img src="img/icon-elasticsearch-bb.svg" class="cover" />
+          <h1 class="caps">
+            <span class="bold">RESTful</span>
+            <span class="chromatic-aberration">Elastic Search</span>
+          </h1>
+          <h3>with OData protocol</h3>
+        </section>
+        <!-- Slide 2 - Author intro -->
+        <section data-slide-type="author" data-background-color="#414141">
+          <h2>About Me</h2>
+          <img data-src="img/me.jpg" class="avatar" />
+          <h1 class="bold">Nimeet Shah</h1>
+          <p>Developer,
+            <span class="yellow">
+              <b>Roambee</b>&trade;</span>
+          </p>
+          <p>
+            <small>
+              <img data-src="img/github-logo.svg" class="brand-icon" />nvme978 &nbsp;&nbsp;&nbsp;&nbsp;
+              <img data-src="img/twitter-logo.svg" class="brand-icon" />@nimeetshah
+            </small>
+          </p>
+          <div class="text-animation-wrapper">
+            <p class="text-animation"></p>
+          </div>
+        </section>
+        <!-- Slide 3 - Introduction to Odata protocol -->
+				<section data-background-color="#61BC88">
+					<!-- Slide 3.1 - What is Odata? -->
+					<section>
+						<h1 class="bold">OData Protocol 101</h1>
+						<p>OData (Open Data Protocol) is an ISO/IEC approved, 
+              OASIS standard that defines a set of best practices for building 
+              and consuming RESTful APIs.</p>
+						<p class="spacer"/>
+            <p>The latest version of
+              <a href="http://www.odata.org/">OData</a> is 4.0 (as of 3rd Jan 2018).</p>
+					</section>
+					<!-- Slide 3.2 - Differences with crawling. -->
+					<section>
+						<h2 class="bold">Why do we need this?</h2>
+						<p>Elastic search is a very fast at retreiving data, but it is not easy to form queries on the fly.</p>
+						<p class="spacer"/>
+            <p>Roambee has <span class="bold">thousands</span> of bees pinging every minute. The data from these persists in ES.</p>
+            <p class="spacer" />
+            <p><span class="italic">Easy</span> RESTful access to this data helps customers as well as operations.</p>
+					</section>
+        </section>
+        <!-- Slide 4 - Current/Past real-world challenges -->
+				<section data-background-color="#8D6E63">
+					<h1 class="bold">Real-world challenges</h1>
+					<p>
+						<ul>
+							<li>Single API vs Multiple indices</li>
+              <li>Super specific filters</li>
+              <li>Field abstraction</li>
+              <li>Parameter grouping</li>
+              <li>Pagination</li>
+						</ul>
+					</p>
+					<p class="spacer"/>
+					<small><em>*wipes sweat from forehead*</em></small>
+        </section>
+        <!-- Slide 5 - CDP -->
+				<section data-background-color="#F07268">
+					<!-- Slide 5.1 - What is CIO? -->
+					<section>
+						<h1 class="bold">Say hi to CIO!</h1>
+						<p><u>C</u>onfigurable <u>I</u>ndex <u>O</u>bject is an index definition object that helps the API fetch data.</p>
+						<p class="spacer"/>
+						<p>Standardizing ES indices helps the API to run on any kind of index.</p>
+						<p class="spacer"/>
+						<p class="bold">Any new index (or modification to an existing index) plugs into the API without any code changes.</p>
+          </section>
+          <!-- Slide 5.2 - CIO Example -->
+					<section>
+						<h1 class="bold">Here's what a CIO looks like</h1>
+						<img src="img/cio-example.png" class="cover" />
+          </section>
+          <!-- Slide 5.2 - Easy, right? -->
+					<section>
+            <h1 class="bold">Wait...</h1>
+            <p>So all I need to do is create this object and the index is ready to use?</p>
+						<img src="img/yes-gif.gif" />
+          </section>
+        </section>
+        <!-- Slide 6 - Sorting, Offset & Limit -->
+				<section data-background-color="#5E9AC0">
+					<!-- Slide 6.1 - Sorting, Offset & Limit? -->
+					<section>
+						<h1 class="bold">Sorting, Offset &amp; Limits</h1>
+						<p>API supports sorting, offset and limiting results based on the client's requirement.</p>
+						<p class="spacer"/>
+            <p>Response from the API contains the metadata about the result.</p>
+            <p class="spacer" />
+            <p>This helps the client understand &amp; form the next request.</p>
+          </section>
+        </section>
+        <!-- Slide 8 - Thank you! -->
+				<section data-background-color="#ffffff">
+					<h1 class="bold red">Thanks 🙏🏼</h1>
+          <img data-src="img/roambee-logo.png" class="no-border brand-logo-roambee"/>
+				</section>
       </div>
     </div>
     <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
@@ -39,7 +144,7 @@
         progress: true,
         history: true,
         center: true,
-        transition: 'default',  // none/fade/slide/convex/concave/zoom
+        transition: 'slide',  // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
         dependencies: [
           { src: 'node_modules/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
