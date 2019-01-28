@@ -9,6 +9,7 @@
     <!-- Code syntax highlighting -->
     <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <link rel="stylesheet" href="css/custom.css">
     <link rel="icon" sizes="32x32" href="img/favicon-roambee.ico">
 
@@ -127,9 +128,75 @@
             <p>This helps the client understand &amp; form the next request.</p>
           </section>
         </section>
+        <section data-background-color="#D8D359">
+          <!-- Slide 6.1 - Sorting, Offset & Limit? -->
+          <section>
+            <h1 class="bold">$filter</h1>
+            <p>How to apply filters?</p>
+            <p class="spacer" />
+            <p class="spacer">
+              <pre class="prettyprint">$filter=account_name eq 'xyz' and device_type eq 'device1'</pre>
+              <pre class="prettyprint">$filter=device_type eq 'device1' or device_type eq 'device2'</pre>
+            </p>
+            <p class="spacer" />
+            <p>Supports eq, ne, has, gt, gte, lt, lte</p>
+          </section>
+          <section>
+            <h1 class="bold">$offset</h1>
+            <p>How to apply offset?</p>
+            <p class="spacer" />
+            <p class="spacer">
+              <pre class="prettyprint">$filter=account_name eq 'xyz'&$offset=10</pre>
+            </p>
+            <p class="spacer" />
+            <p>Offset results by 10</p>
+          </section>
+          <section>
+            <h1 class="bold">$orderBy</h1>
+            <p>How to apply sorting?</p>
+            <p class="spacer" />
+            <p class="spacer">
+              <pre class="prettyprint">$filter=account_name eq 'xyz'&$orderBy=account_id</pre>
+              <pre class="prettyprint">$filter=account_name eq 'xyz'&$orderBy=acc_id, created_on desc</pre>
+            </p>
+            <p class="spacer" />
+            <p>Apply sorting on multiple fields</p>
+          </section>
+          <section>
+            <h1 class="bold">API Response</h1>
+            <p>Here's what the response looks like</p>
+            <p class="spacer" />
+            <p class="spacer">
+              <pre class="prettyprint">{
+  "offset": 10,
+  "size": 10,
+  "total": 35,
+  "data": [
+      {
+        "key": "val"
+      },
+      {
+        "key2": "val2"
+      }
+  ]
+}</pre>
+            </p>
+            <p class="spacer" />
+          </section>
+          <section>
+            <h1 class="bold">Error handling</h1>
+            <p>Help users find faults in their stars</p>
+            <p class="spacer" />
+            <p class="spacer">
+              <pre class="prettyprint">"Syntax error at 'false$offset=10'."</pre>
+            </p>
+            <p class="spacer" />
+            <p>Points exactly where the error is!</p>
+          </section>
+        </section>
         <!-- Slide 8 - Thank you! -->
 				<section data-background-color="#ffffff">
-					<h1 class="bold red">Thanks 🙏🏼</h1>
+					<h1 class="bold red">Thank you 🙏🏼</h1>
           <img data-src="img/roambee-logo.png" class="no-border brand-logo-roambee"/>
 				</section>
       </div>
